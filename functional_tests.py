@@ -24,7 +24,8 @@ class NewVisitorTest(unittest.TestCase):
 
         # Die Hauptseite ist eine Karte (erstmal: Liste), die KiTas ausflistet.
 
-        # Er klickt eine und wird zu einer Infoseite über diese KiTa weiter geleitet.
+        # Er klickt eine und wird zu einer Infoseite über diese KiTa weiter geleitet. 
+        # Bzw. eine Seite poppt auf.
 
     def test_search_for_kita_near_you(self):
         # Suche in Wohnortnähe!
