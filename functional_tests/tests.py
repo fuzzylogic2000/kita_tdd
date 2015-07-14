@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
+from django.test import LiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-import unittest
 
-class NewVisitorTest(unittest.TestCase):
+class NewVisitorTest(LiveServerTestCase):
 
     def setUp(self):
         self.browser = webdriver.Firefox()
@@ -22,7 +22,7 @@ class NewVisitorTest(unittest.TestCase):
 
         # Timo sucht nach einem KiTa-Platz für seine Tochter.
         # Er hat von einer super neuen Webseite gehört. Die besucht er.
-        self.browser.get('http://localhost:8000')
+        self.browser.get(self.live_server_url)
 
         # Er bemerkt, dass schon in den Überschriften (page header and title) 'KiTa' erwähnt ist.
         self.assertIn('KiTa', self.browser.title)
@@ -71,6 +71,3 @@ class NewVisitorTest(unittest.TestCase):
     def test_search_for_kita_near_you(self):
         # Suche in Wohnortnähe!
         pass
-
-if __name__ == '__main__':
-    unittest.main(warnings='ignore')
